@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="hr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Karlo Vlah" />
+    <meta name="keywords" content="rezervacija, Porsche, voznja" />
+    <title>Pocetna stranica</title>
+    <link rel="stylesheet" href="../css/kvlah22.css" />
+    <link rel="stylesheet" href="../css/obrazac.css" />
+    <script src="../js/kvlah22.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="grid">
+        <a href="../index.html" class="logo" id="logo_slika">
+          <img src="../resursi/slike/logo.png" width="100" alt="porsche_emblem"
+        /></a>
+        <a href="../index.html" class="logo" id="logo_tekst">
+          <img
+            src="../resursi/slike/logo_slova.png"
+            width="300"
+            alt="porsche_logo_text"
+          />
+        </a>
+      </div>
+      <nav id="racunalo">
+        <a href="./glavne/dokumentacija.html">Dokumentacija</a>
+        <a href="./glavne/oAutoru.html">O Autoru</a>
+        <a href="./galerija.html">Galerija</a>
+        <a href="./tablica.html">Primjerci</a>
+      </nav>
+    </header>
+    <nav id="mobitel">
+      <a href="./glavne/dokumentacija.html">Dokumentacija</a>
+      <a href="./glavne/oAutoru.html">O Autoru</a>
+      <a href="./galerija.html">Galerija</a>
+      <a href="./tablica.html">Primjerci</a>
+    </nav>
+    <main>
+      <h1>Iskusite snagu</h1>
+      <form
+        method="post"
+        action="https://spider.foi.hr/OWT/materijali/ispis_forme.php"
+      >
+        <div class="stavka_forme">
+          <label for="ime">Ime</label>
+          <input type="text" id="ime" name="ime" required maxlength="20" />
+        </div>
+        <div class="stavka_forme">
+          <label for="prezime">Prezime</label>
+          <input
+            type="text"
+            id="prezime"
+            name="prezime"
+            required
+            maxlength="30"
+          />
+        </div>
+        <div class="stavka_forme">
+          <label for="mail">E-mail</label>
+          <input
+            type="email"
+            id="mail"
+            name="mail"
+            placeholder="naziv@mail"
+            required
+            maxlength="50"
+          />
+        </div>
+        <div class="stavka_forme">
+          <label for="br_mobitel">Mobitel</label>
+          <input
+            type="tel"
+            id="br_mobitel"
+            pattern="[0-9]{10}"
+            placeholder="xxx xxx xxxx"
+            required
+          />
+        </div>
+        <div class="stavka_forme">
+          <label for="odabir">Izaberi automobil</label>
+          <select name="odabir" id="odabir" required>
+            <option value="" disabled selected>Izaberi automobil</option>
+            <optgroup label="911">
+              <option>911 Kabriolet</option>
+              <option>911 GT3</option>
+              <option>911 GT3 RS</option>
+            </optgroup>
+            <optgroup label="718">
+              <option>718 Boxter</option>
+              <option>718 Cayman</option>
+              <option>718 GT4</option>
+            </optgroup>
+          </select>
+        </div>
+        <div class="stavka_forme">
+          <label for="prvi">Paket</label>
+          <div class="radio_grupa">
+            <input type="radio" id="prvi" name="radio" value="prvi" checked />
+            <p>Običan</p>
+            <input type="radio" id="drugi" name="radio" value="drugi" />
+            <p>Sport</p>
+            <input type="radio" id="treci" name="radio" value="treci" />
+            <p>Sport +</p>
+          </div>
+        </div>
+        <div class="stavka_forme">
+          <label for="godine">Dob korisnika</label>
+          <div class="godine">
+            <div class="flex" style="justify-content: space-between">
+              <p>25 - 37</p>
+              <p>38 - 50</p>
+              <p>51 - 63</p>
+              <p>64 - 76</p>
+            </div>
+            <input
+              type="range"
+              id="godine"
+              name="godine"
+              min="0"
+              max="3"
+              value="1"
+            />
+          </div>
+        </div>
+        <div class="stavka_forme">
+          <label for="datum">Datum</label>
+          <input type="date" id="datum" name="datum" required />
+        </div>
+        <div class="stavka_forme">
+          <label for="brojke">Broj dana (1-5)</label>
+          <input
+            type="number"
+            id="brojke"
+            name="brojke"
+            min="1"
+            max="5"
+            required
+          />
+        </div>
+        <div class="stavka_forme">
+          <label for="napomena">Napomena</label>
+          <textarea
+            id="napomena"
+            name="napomena"
+            placeholder="Ako imate posebne zahtjeve, poput boje i slično, navedite ovdje."
+            rows="5"
+            maxlength="400"
+          ></textarea>
+        </div>
+        <div class="stavka_forme">
+          <label for="kocke">Prihvaćam uvijete</label>
+          <input type="checkbox" id="kocke" name="kocke" required />
+        </div>
+        <div class="stavka_forme"></div>
+        <div class="stavka_forme gumbi">
+          <input class="gumb" type="submit" value="Rezerviraj" />
+        </div>
+        <div class="stavka_forme gumbi">
+          <input class="gumb" type="reset" value="Inicijaliziraj" />
+        </div>
+      </form>
+    </main>
+    <footer>
+      <div class="licence">
+        <a
+          href="https://validator.w3.org/check?uri=https://spider.foi.hr/OWT/2024/zadaca_01/kvlah22/html/obrazac.html"
+          ><img src="../resursi/slike/HTML5.png" alt="html5"
+        /></a>
+        <a href="https://creativecommons.org/licenses/by-nc/2.0/deed.en"
+          ><img src="../resursi/slike/by-nc.png" alt="cc by nc"
+        /></a>
+      </div>
+      <p class="licence">&copy;2024 Karlo Vlah</p>
+    </footer>
+  </body>
+</html>

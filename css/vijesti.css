@@ -1,0 +1,47 @@
+.naslov {
+    padding: 2rem 0 0 2rem;
+}
+
+.sadrzaj {
+    padding: 1rem 1.5rem 2rem 2rem;
+}
+
+#multimedija {
+    padding: 2rem 0 0 0;
+}
+
+#multimedija > * {
+    width: 49.5%;
+    height: 30rem;
+    object-fit: cover;
+}
+
+#vrh {
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem 0 0 ;
+}
+
+#rezerviraj {
+    padding: 1rem;
+    background-color: #b12b28;
+    color: white;
+}
+
+@media only screen and (max-width: 768px) {
+    .sadrzaj {
+        padding: 1rem 2rem 0rem 2rem;
+    }
+
+    #multimedija {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #multimedija > * {
+        width: 100%;
+        height: 15rem;
+        padding-bottom: 3rem;
+        object-fit: cover;
+    }
+  }

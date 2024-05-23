@@ -1,0 +1,131 @@
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#opis {
+  padding: 7rem 0 0 0;
+  box-sizing: border-box;
+}
+
+#opis > p {
+  min-height: 60%;
+  text-align: center;
+}
+
+section > h1 {
+  width: fit-content;
+  font-size: 3em;
+  margin-bottom: 0;
+}
+
+section > p {
+  font-size: 1.5em;
+  font-weight: 500;
+}
+
+h1 + p {
+  width: 50%;
+}
+
+#mapa {
+  display: flex;
+  flex-direction: row;
+  padding: 1rem 2rem 1rem 0;
+}
+
+#mapa_tekst {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 50%;
+  color: white;
+}
+
+#mapa_tekst > h1 {
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+#mapa_tekst > p {
+  font-size: 1.3rem;
+}
+
+#vijesti {
+  padding: 3rem 0 6rem 0;
+}
+
+#vijesti_sadrzaj {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  width: 80%;
+  column-gap: 50px;
+  row-gap: 50px;
+  padding-top: 4rem;
+}
+
+.vijest {
+  display: flex;
+  flex-direction: column;
+}
+
+.vijest > img {
+  width: 100%;
+  height: 200px;
+  box-sizing: border-box;
+  object-fit: cover;
+}
+
+.vijest > h3 {
+  font-size: 2rem;
+  box-sizing: border-box;
+}
+
+.vijest > p {
+  width: 100%;
+}
+
+.vijest > div > a {
+  background-color: #b12b28;
+  color: white;
+  font-weight: 500;
+  padding: 10px;
+  font-size: small;
+}
+
+@media only screen and (max-width: 768px) {
+  div#vijesti_sadrzaj {
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto;
+  }
+
+  #opis > h1,
+  #mapa_tekst > h1 {
+    font-size: 2.5rem;
+    margin: auto 0 0 0;
+  }
+
+  #opis > p,
+  #mapa_tekst > p {
+    font-size: medium;
+    width: 70%;
+    margin: 1rem 0 auto 0;
+    text-align: justify;
+  }
+
+  #mapa {
+    padding: 1rem 0 0 0;
+    flex-direction: column;
+  }
+
+  #mapa_tekst {
+    width: 100%;
+  }
+
+  #karta {
+    width: 100%;
+    margin: 2rem 0 0 0;
+  }
+}
