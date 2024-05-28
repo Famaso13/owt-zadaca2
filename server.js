@@ -23,6 +23,7 @@ server.use(express.json());
 
 console.log(putanja);
 
+//2. zad
 // index.html
 server.get("/", (zahtjev, odgovor) => {
 	odgovor.sendFile(putanja + "/html/index.html");
@@ -67,6 +68,16 @@ server.get("/suv", (zahtjev, odgovor) => {
 server.get("/voz", (zahtjev, odgovor) => {
 	odgovor.sendFile(putanja + "/html/detalji/voznja.html");
 });
+
+// 3. zad
+// klijentski js
+server.use("/jsk", express.static(putanja + "/js/klijent"));
+
+// css dir
+server.use("/css", express.static(putanja + "/css"));
+
+// slike dir
+server.use("/slike", express.static(putanja + "/resursi/slike"));
 
 server.listen(port, () => {
 	console.log(`Server pokrenut na portu: ${port}`);
