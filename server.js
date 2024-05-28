@@ -86,6 +86,12 @@ server.use((zahtjev, odgovor) => {
 	odgovor.send("<p>Stranica ne postoji!</p><a href='/'>Natrag na pocetnu</a>");
 });
 
+// 5.zad
+server.get("/popis", (zahtjev, odgovor) => {
+	odgovor.type("html");
+	odgovor.end();
+});
+
 server.listen(port, () => {
 	console.log(`Server pokrenut na portu: ${port}`);
 });
