@@ -1,0 +1,72 @@
+[
+    {
+      "Model": "911",
+      "Godina proizvodnje": 1964,
+      "Motor": "Boxer 6",
+      "Boja": "Crvena",
+      "Cijena (u milijunima eura)": 1.5
+    },
+    {
+      "Model": "356",
+      "Godina proizvodnje": 1950,
+      "Motor": "Boxer 4",
+      "Boja": "Plava",
+      "Cijena (u milijunima eura)": 2.2
+    },
+    {
+      "Model": "918 Spyder",
+      "Godina proizvodnje": 2015,
+      "Motor": "V8 hibrid",
+      "Boja": "Zelena",
+      "Cijena (u milijunima eura)": 1.7
+    },
+    {
+      "Model": "930 Turbo",
+      "Godina proizvodnje": 1975,
+      "Motor": "Boxer 6 turbo",
+      "Boja": "Crna",
+      "Cijena (u milijunima eura)": 1.8
+    },
+    {
+      "Model": "Cayman GT4",
+      "Godina proizvodnje": 2020,
+      "Motor": "Boxer 6",
+      "Boja": "Žuta",
+      "Cijena (u milijunima eura)": 1.4
+    },
+    {
+      "Model": "Macan",
+      "Godina proizvodnje": 2019,
+      "Motor": "V6",
+      "Boja": "Siva",
+      "Cijena (u milijunima eura)": 1.0
+    },
+    {
+      "Model": "Panamera",
+      "Godina proizvodnje": 2018,
+      "Motor": "V8",
+      "Boja": "Bijela",
+      "Cijena (u milijunima eura)": 1.3
+    },
+    {
+      "Model": "959",
+      "Godina proizvodnje": 1986,
+      "Motor": "Boxer 6 twin-turbo",
+      "Boja": "Platinum",
+      "Cijena (u milijunima eura)": 2.5
+    },
+    {
+      "Model": "Boxster",
+      "Godina proizvodnje": 1996,
+      "Motor": "Flat-6",
+      "Boja": "Srebrna",
+      "Cijena (u milijunima eura)": 1.1
+    },
+    {
+      "Model": "718 Cayman",
+      "Godina proizvodnje": 2017,
+      "Motor": "Boxer 4 turbo",
+      "Boja": "Crveno-siva",
+      "Cijena (u milijunima eura)": 1.2
+    }
+  ]  

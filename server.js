@@ -18,7 +18,8 @@ const server = express();
 
 const putanja = __dirname;
 
-server.use("/css", express.static(putanja + "/css"));
+const ds = require('fs');
+
 server.use(express.json());
 
 console.log(putanja);
@@ -79,17 +80,41 @@ server.use("/css", express.static(putanja + "/css"));
 // slike dir
 server.use("/slike", express.static(putanja + "/resursi/slike"));
 
+// 5.zad
+// a
+server.get("/popis", (zahtjev, odgovor) => {
+	odgovor.type("html"); //moramo reci koji je tip
+	// let zaglavlje = fs.readFileSync("resursi/zaglavlje.txt", "utf-8");
+	// let podnozje = fs.readFileSync("resursi/podnozje.txt", "utf-8");
+	// odgovor.write(zaglavlje);
+	// odgovor.write("Dinamicna stranica");
+	let data = ds.readFileSync("resursi/izlozba.csv", "utf-8", (err, data) => {
+		if (err) console.log(err);
+		else console.log(data);
+		});
+	let lista = "";
+	let redovi = data.split("\n");
+	lista += "<ul>"; 
+	for(var red in redovi){
+		var stupci = redovi[red].split("#");
+		lista += "<li><a href='#'>" + stupci[0] + " - ";
+		for(var stupac in stupci){	
+			if(stupac != 0){
+				lista += stupci[stupac] + ", ";
+			}	
+		}
+		lista += "</a></li>";
+	}
+	lista += "</ul>";
+	odgovor.write(lista);
+	odgovor.end();
+});
+
 // 4.zad
 server.use((zahtjev, odgovor) => {
 	odgovor.status(404);
 	odgovor.type("html");
 	odgovor.send("<p>Stranica ne postoji!</p><a href='/'>Natrag na pocetnu</a>");
-});
-
-// 5.zad
-server.get("/popis", (zahtjev, odgovor) => {
-	odgovor.type("html");
-	odgovor.end();
 });
 
 server.listen(port, () => {
