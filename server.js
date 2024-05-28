@@ -110,6 +110,33 @@ server.get("/popis", (zahtjev, odgovor) => {
 	odgovor.end();
 });
 
+// 6.zad
+server.get("/brisi/:naziv", (zahtjev, odgovor) => {
+	naziv = zahtjev.params.naziv;
+	let data = ds.readFileSync("resursi/izlozba.csv", "utf-8", (err, data) => {
+		if (err) console.log(err);
+		else console.log(data);
+		});
+	let ostali = "";
+	let pronaden = 0;
+	let redovi = data.split("\n");
+	for(var index in redovi){
+		var stupci = redovi[index].split("#");
+		if(stupci[0]){
+			if(stupci[0] != naziv){
+				ostali += redovi[index] + "\n";
+			}
+			else{pronaden = 1;}
+		}
+	}
+	if(pronaden)
+	ds.writeFile('resursi/izlozba.csv', ostali, {flag: 'w'}, (greska) => {
+		if(greska) console.error("Greska kod pisanja u csv datoteku.")
+	})
+	odgovor.redirect("/popis")
+	odgovor.end();
+});
+
 // 4.zad
 server.use((zahtjev, odgovor) => {
 	odgovor.status(404);
