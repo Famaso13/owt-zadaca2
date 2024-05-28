@@ -79,6 +79,13 @@ server.use("/css", express.static(putanja + "/css"));
 // slike dir
 server.use("/slike", express.static(putanja + "/resursi/slike"));
 
+// 4.zad
+server.use((zahtjev, odgovor) => {
+	odgovor.status(404);
+	odgovor.type("html");
+	odgovor.send("<p>Stranica ne postoji!</p><a href='/'>Natrag na pocetnu</a>");
+});
+
 server.listen(port, () => {
 	console.log(`Server pokrenut na portu: ${port}`);
 });
