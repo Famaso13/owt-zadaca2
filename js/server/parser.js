@@ -19,8 +19,8 @@ class Parser {
     data += csvObj + "\n";
     ds.writeFile("resursi/izlozba.csv", data, { flag: "w" }, (greska) => {
       if (greska) console.error("Greska zapisivanja novog retka u CSV");
+      return greska;
     });
-    return data;
   };
 
   kopirajJSONuCSV = function () {
@@ -39,19 +39,27 @@ class Parser {
       if (greska) console.error("Greska zapisivanja JSON u CSV");
     });
   };
+
   prebaciCSVuJSON = function (csvObj) {
     let csvRedak = csvObj.split("\n");
     let csvStupac = csvRedak[0].split("#");
-    let jsonRedak = {
-      Model: csvStupac[0],
-      Godina: csvStupac[1],
-      Motor: csvStupac[2],
-      Boja: csvStupac[3],
-      Cijena: csvStupac[4],
-    };
+
+    let jsonRedak =
+      '{"Model":"' +
+      csvStupac[0] +
+      '","Godina":"' +
+      csvStupac[1] +
+      '","Motor":"' +
+      csvStupac[2] +
+      '","Boja":"' +
+      csvStupac[3] +
+      '","Cijena":"' +
+      csvStupac[4] +
+      '"}';
 
     return JSON.parse(jsonRedak);
   };
+
   prebaciJSONuCSV = function (jsonObj) {
     let csvRedak = "";
     csvRedak += jsonObj.Model + ",";

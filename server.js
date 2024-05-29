@@ -144,10 +144,10 @@ server.get("/owt/izlozba", (zahtjev, odgovor) => {
   odgovor.type("json");
   let data = parser.dajIzlozbuCSV();
   if (data == null) {
-    odgovor.send(JSON.stringify({ poruka: "Greška kod učitavanja podataka" }));
+    odgovor.send({ poruka: "Greška kod učitavanja podataka" });
   } else {
     odgovor.status(200);
-    odgovor.send(data);
+    odgovor.send(parser.prebaciCSVuJSON(data));
   }
 });
 
@@ -159,7 +159,31 @@ server.post("/owt/izlozba", (zahtjev, odgovor) => {
   for (kljuc in post) {
     podaci.push(post[kljuc]);
   }
-  console.log(podaci);
+  csvRedak = "";
+  for (let i in podaci) {
+    if (i < podaci.length - 1) csvRedak += podaci[i] + "#";
+    else csvRedak += podaci[i];
+  }
+  let greska = parser.dodajNaCSV(csvRedak);
+  if (greska) {
+    odgovor.status(417);
+    odgovor.send({ poruka: "Nevaljani podaci" });
+  } else {
+    odgovor.status(200);
+    odgovor.send({ poruka: "Podaci dodani" });
+  }
+});
+
+// PUT
+server.put("/owt/izlozba", (zahtjev, odgovor) => {
+  odgovor.status(501);
+  odgovor.send({ poruka: "Metoda nije implementirana" });
+});
+
+// DELETE
+server.delete("/owt/izlozba", (zahtjev, odgovor) => {
+  odgovor.status(501);
+  odgovor.send({ poruka: "Metoda nije implementirana" });
 });
 
 // 4.zad
