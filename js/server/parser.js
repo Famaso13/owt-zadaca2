@@ -23,6 +23,27 @@ class Parser {
     });
   };
 
+  brisiIzCSV = function (csv) {
+    let data = ds.readFileSync("resursi/izlozba.csv", "utf-8", (err, data) => {
+      if (err) console.log(err);
+      else console.log(data);
+    });
+    let ostali = "";
+    let redovi = data.split("\n");
+    for (var index in redovi) {
+      var stupci = redovi[index].split("#");
+      if (stupci[0] && stupci[0] != csv) {
+        ostali += redovi[index] + "\n";
+      }
+    }
+    console.log("csv " + csv);
+    if (ostali)
+      ds.writeFile("resursi/izlozba.csv", ostali, { flag: "w" }, (greska) => {
+        if (greska) console.error("Greska kod pisanja u csv datoteku.");
+        return greska;
+      });
+  };
+
   kopirajJSONuCSV = function () {
     var podaci = this.dajIzlozbu();
     var csvRedak = "";
