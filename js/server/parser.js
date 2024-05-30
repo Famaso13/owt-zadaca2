@@ -46,7 +46,7 @@ class Parser {
 
   kopirajJSONuCSV = function () {
     var podaci = this.dajIzlozbu();
-    var csvRedak = "";
+    let csvRedak = "";
     for (var index in podaci) {
       if (index < podaci.length) {
         csvRedak += podaci[index].Model + "#";
@@ -63,22 +63,37 @@ class Parser {
 
   prebaciCSVuJSON = function (csvObj) {
     let csvRedak = csvObj.split("\n");
-    let csvStupac = csvRedak[0].split("#");
+    let jsonZapis = "";
+    if (csvRedak.length > 1) {
+      jsonZapis += "[";
+    }
+    for (let index in csvRedak) {
+      let csvStupac = csvRedak[index].split("#");
+      if (csvStupac[0]) {
+        let jsonRedak =
+          '{"Model":"' +
+          csvStupac[0] +
+          '","Godina":"' +
+          csvStupac[1] +
+          '","Motor":"' +
+          csvStupac[2] +
+          '","Boja":"' +
+          csvStupac[3] +
+          '","Cijena":"' +
+          csvStupac[4] +
+          '"}';
+        if (index == 0) {
+          jsonZapis += jsonRedak;
+        } else {
+          jsonZapis += "," + jsonRedak;
+        }
+      }
+    }
+    if (csvRedak.length > 1) {
+      jsonZapis += "]";
+    }
 
-    let jsonRedak =
-      '{"Model":"' +
-      csvStupac[0] +
-      '","Godina":"' +
-      csvStupac[1] +
-      '","Motor":"' +
-      csvStupac[2] +
-      '","Boja":"' +
-      csvStupac[3] +
-      '","Cijena":"' +
-      csvStupac[4] +
-      '"}';
-
-    return JSON.parse(jsonRedak);
+    return JSON.parse(jsonZapis);
   };
 
   prebaciJSONuCSV = function (jsonObj) {
