@@ -83,13 +83,14 @@ server.use("/css", express.static(putanja + "/css"));
 server.use("/slike", express.static(putanja + "/resursi/slike"));
 
 // 5.zad
-// a
 server.get("/popis", (zahtjev, odgovor) => {
   odgovor.type("html"); //moramo reci koji je tip
   // let zaglavlje = fs.readFileSync("resursi/zaglavlje.txt", "utf-8");
   // let podnozje = fs.readFileSync("resursi/podnozje.txt", "utf-8");
   // odgovor.write(zaglavlje);
   // odgovor.write("Dinamicna stranica");
+
+  // a
   let data = ds.readFileSync("resursi/izlozba.csv", "utf-8", (err, data) => {
     if (err) console.log(err);
     else console.log(data);
@@ -111,7 +112,13 @@ server.get("/popis", (zahtjev, odgovor) => {
     lista += "</li>";
   }
   lista += "</ul>";
-  odgovor.write(lista);
+
+  // c
+  forma = "<form><button id='popuni'>Popuni</button></form>";
+  //skripta = '<script type="text/javascript">const gumb = document.getElementById("popuni"); function puniCSV() {alert("opa")} gumb.addEventListener("click", puniCSV);</script>';
+
+  stranica = /*skripta +*/ forma + lista;
+  odgovor.write(stranica);
   odgovor.end();
 });
 
