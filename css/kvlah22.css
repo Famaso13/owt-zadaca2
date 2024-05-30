@@ -45,7 +45,7 @@ header {
   transform: scale(0.9);
 }
 
-#logo_tekst {
+a#logo_tekst {
   display: flex;
   width: auto;
   justify-content: center;
@@ -60,7 +60,7 @@ header {
   display: none;
 }
 
-nav {
+.nav {
   position: relative;
   display: flex;
   justify-content: space-evenly;
@@ -68,9 +68,17 @@ nav {
   background-color: black;
 }
 
-nav#mobitel {
-  display: none;
+/* js simulacija */
+
+.nav_verzija {
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  position: static;
+  top: 0;
 }
+
+/* kraj js simulacije */
 
 nav > a {
   display: flex;
@@ -123,6 +131,17 @@ p[class*="licence"] {
   padding: 3rem;
 }
 
+/* js simulacija */
+
+.img_slika {
+  width: 50%;
+}
+.img_tekst {
+  width: 60%;
+}
+
+/* kraj js simulacije */
+
 @media only screen and (max-width: 768px) {
   .licence {
     flex-direction: column;
@@ -139,12 +158,8 @@ p[class*="licence"] {
     margin-bottom: 1rem;
   }
 
-  nav#racunalo {
-    display: none;
-  }
-
-  nav#mobitel {
-    display: block;
+  .nav {
+    display: flex;
     flex-direction: column;
     position: static;
     top: 0;

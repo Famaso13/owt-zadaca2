@@ -9,7 +9,7 @@ section {
   box-sizing: border-box;
 }
 
-#opis > p {
+.opis_p {
   min-height: 60%;
   text-align: center;
 }
@@ -44,12 +44,12 @@ h1 + p {
   color: white;
 }
 
-#mapa_tekst > h1 {
+.mapa_tekst_h1 {
   font-size: 2.5rem;
   margin: 0;
 }
 
-#mapa_tekst > p {
+.mapa_tekst_p {
   font-size: 1.3rem;
 }
 
@@ -57,14 +57,28 @@ h1 + p {
   padding: 3rem 0 6rem 0;
 }
 
-#vijesti_sadrzaj {
+.vijesti_sadrzaj {
   display: grid;
   grid-template-columns: auto auto auto;
+  grid-template-rows: auto;
   width: 80%;
   column-gap: 50px;
   row-gap: 50px;
   padding-top: 4rem;
 }
+
+/* js simulacija */
+
+.vijesti_sadrzaj_mobile {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto auto auto;
+  width: 80%;
+  column-gap: 50px;
+  row-gap: 50px;
+  padding-top: 4rem;
+}
+/* kraj js simulacije */
 
 .vijest {
   display: flex;
@@ -95,17 +109,42 @@ h1 + p {
   font-size: small;
 }
 
-#prikaz_div {
+.prikaz_div {
   display: flex;
   justify-content: flex-end;
-  box-sizing: border-box; 
+  box-sizing: border-box;
   width: 100%;
   padding: 0 2rem;
 }
 
+/* js simulacija */
+
+.prikaz_div_verzija {
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0 2rem;
+}
+
+.opis_mapa_tekst_h1_verzija {
+  font-size: 2.5rem;
+  margin: 1rem 0 0 0;
+}
+
+.opis_mapa_tekst_p {
+  font-size: medium;
+  width: 70%;
+  margin: 1rem 0 auto 0;
+  text-align: justify;
+  color: rebeccapurple;
+}
+
+/* kraj js simulacije */
+
 .gumb {
-  width: 15%;
-  height: 2rem;
+  width: 15rem;
+  height: 3rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -113,12 +152,18 @@ h1 + p {
   background-color: #b12b28;
   color: white;
   font-weight: 500;
+  user-select: none;
+  box-sizing: border-box;
 }
 
 @media only screen and (max-width: 768px) {
-  div#vijesti_sadrzaj {
+  div.vijesti_sadrzaj {
     grid-template-columns: auto;
     grid-template-rows: auto auto auto;
+  }
+
+  #prikaz_div {
+    justify-content: center;
   }
 
   #opis > h1,
@@ -127,8 +172,8 @@ h1 + p {
     margin: auto 0 0 0;
   }
 
-  #opis > p,
-  #mapa_tekst > p {
+  .opis_p,
+  .mapa_tekst_p {
     font-size: medium;
     width: 70%;
     margin: 1rem 0 auto 0;

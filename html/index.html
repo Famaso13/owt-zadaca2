@@ -13,36 +13,35 @@
     <header>
       <div class="grid">
         <a href="/" class="logo" id="logo_slika">
-          <img src="/slike/logo.png" width="100" alt="porsche_emblem"
+          <img
+            id="img_slika"
+            src="/slike/logo.png"
+            width="100"
+            alt="porsche_emblem"
         /></a>
         <a href="/" class="logo" id="logo_tekst">
           <img
+            id="img_tekst"
             src="/slike/logo_slova.png"
             width="300"
             alt="porsche_logo_text"
           />
         </a>
       </div>
-      <nav id="racunalo">
+      <nav class="nav" id="racunalo">
         <a href="/dok">Dokumentacija</a>
         <a href="/oau">O Autoru</a>
         <a href="/gal">Galerija</a>
         <a href="/tab">Primjerci</a>
       </nav>
     </header>
-    <nav id="mobitel">
-      <a href="/dok">Dokumentacija</a>
-      <a href="/oau">O Autoru</a>
-      <a href="/gal">Galerija</a>
-      <a href="/tab">Primjerci</a>
-    </nav>
     <main>
       <section id="opis">
-        <div id="prikaz_div">
-          <a class="gumb">Prebaci na mobilnu verziju</a>
+        <div class="prikaz_div" id="prikaz_div">
+          <a class="gumb" id="verzija">Prebaci na mobilnu verziju</a>
         </div>
-        <h1>Porsche Muzej</h1>
-        <p>
+        <h1 id="opis_h1">Porsche Muzej</h1>
+        <p class="opis_p" id="opis_p">
           Uzmite dah i zakoračite u svijet čuda i strasti - dobrodošli u Porsche
           muzej. Ovdje se povijest ne samo čuva, već i oživljava u svakom
           detalju. Arhitektonska ljepota koja vas okružuje samo je uvod u ono
@@ -56,8 +55,8 @@
       </section>
       <section id="mapa">
         <div id="mapa_tekst">
-          <h1>Lokacija</h1>
-          <p>
+          <h1 class="mapa_tekst_h1" id="mapa_tekst_h1">Lokacija</h1>
+          <p class="mapa_tekst_p" id="mapa_tekst_p">
             Muzej je smješten u srcu Stuttgarta, u njegovom južnom dijelu,
             nedaleko od tvornice Porsche AG. Ova lokacija nije slučajna -
             Stuttgart je grad s bogatom automobilskom tradicijom i poznat je kao
@@ -78,7 +77,7 @@
       </section>
       <section id="vijesti">
         <h1>Vijesti</h1>
-        <div id="vijesti_sadrzaj">
+        <div id="vijesti_sadrzaj" class="vijesti_sadrzaj">
           <div class="vijest">
             <img src="/slike/kolekcija.png" alt="" />
             <h3>Doživite priču</h3>
