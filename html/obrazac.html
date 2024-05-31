@@ -34,13 +34,17 @@
       <h1>Iskusite snagu</h1>
       <form
         method="post"
+        name="obrazac"
         action="https://spider.foi.hr/OWT/materijali/ispis_forme.php"
+        novalidate
+        onsubmit="return provjera();"
       >
-        <div class="stavka_forme">
+        <div id="greska_ime" class="stavka_forme">
           <label for="ime">Ime</label>
           <input type="text" id="ime" name="ime" required maxlength="20" />
+          <p class="greska"></p>
         </div>
-        <div class="stavka_forme">
+        <div id="greska_prezime" class="stavka_forme">
           <label for="prezime">Prezime</label>
           <input
             type="text"
@@ -49,31 +53,34 @@
             required
             maxlength="30"
           />
+          <p class="greska"></p>
         </div>
-        <div class="stavka_forme">
+        <div id="greska_mail" class="stavka_forme">
           <label for="mail">E-mail</label>
           <input
             type="email"
             id="mail"
             name="mail"
-            placeholder="naziv@mail"
+            placeholder="naziv@mail.com"
             required
             maxlength="50"
           />
+          <p class="greska"></p>
         </div>
-        <div class="stavka_forme">
+        <div id="greska_mobitel" class="stavka_forme">
           <label for="br_mobitel">Mobitel</label>
           <input
             type="tel"
             id="br_mobitel"
-            pattern="[0-9]{10}"
-            placeholder="xxx xxx xxxx"
+            name="br_mobitel"
+            placeholder="xxxxxxxxxx"
             required
           />
+          <p class="greska"></p>
         </div>
-        <div class="stavka_forme">
+        <div id="greska_automobil" class="stavka_forme">
           <label for="odabir">Izaberi automobil</label>
-          <select name="odabir" id="odabir" required>
+          <select name="odabir" id="odabir" multiple required>
             <option value="" disabled selected>Izaberi automobil</option>
             <optgroup label="911">
               <option>911 Kabriolet</option>
@@ -86,8 +93,9 @@
               <option>718 GT4</option>
             </optgroup>
           </select>
+          <p class="greska"></p>
         </div>
-        <div class="stavka_forme">
+        <div id="greska_paket" class="stavka_forme">
           <label for="prvi">Paket</label>
           <div class="radio_grupa">
             <input type="radio" id="prvi" name="radio" value="prvi" checked />
@@ -97,8 +105,9 @@
             <input type="radio" id="treci" name="radio" value="treci" />
             <p>Sport +</p>
           </div>
+          <p class="greska"></p>
         </div>
-        <div class="stavka_forme">
+        <div id="greska_dob" class="stavka_forme">
           <label for="godine">Dob korisnika</label>
           <div class="godine">
             <div class="flex" style="justify-content: space-between">
@@ -116,12 +125,14 @@
               value="1"
             />
           </div>
+          <p class="greska"></p>
         </div>
-        <div class="stavka_forme">
+        <div id="greska_datum" class="stavka_forme">
           <label for="datum">Datum</label>
           <input type="date" id="datum" name="datum" required />
+          <p class="greska"></p>
         </div>
-        <div class="stavka_forme">
+        <div id="greska_br_dana" class="stavka_forme">
           <label for="brojke">Broj dana (1-5)</label>
           <input
             type="number"
@@ -131,8 +142,9 @@
             max="5"
             required
           />
+          <p class="greska"></p>
         </div>
-        <div class="stavka_forme">
+        <div id="greska_napomena" class="stavka_forme">
           <label for="napomena">Napomena</label>
           <textarea
             id="napomena"
@@ -141,16 +153,16 @@
             rows="5"
             maxlength="400"
           ></textarea>
+          <p class="greska"></p>
         </div>
-        <div class="stavka_forme">
+        <div id="greska_uvijeti" class="stavka_forme">
           <label for="kocke">Prihvaćam uvijete</label>
           <input type="checkbox" id="kocke" name="kocke" required />
+          <p class="greska"></p>
         </div>
         <div class="stavka_forme"></div>
         <div class="stavka_forme gumbi">
           <input class="gumb" type="submit" value="Rezerviraj" />
-        </div>
-        <div class="stavka_forme gumbi">
           <input class="gumb" type="reset" value="Inicijaliziraj" />
         </div>
       </form>
@@ -168,5 +180,6 @@
       <p class="licence">&copy;2024 Karlo Vlah</p>
     </footer>
     <script src="/jsk/kvlah22.js"></script>
+    <script src="/jsk/kvlah22_obrazac.js"></script>
   </body>
 </html>
