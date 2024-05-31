@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="hr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Karlo Vlah" />
+    <meta name="keywords" content="izlozba, Porsche, muzej" />
+    <title>Unos primjerka</title>
+    <link rel="stylesheet" href="/css/kvlah22.css" />
+    <link rel="stylesheet" href="/css/obrazac.css" />
+  </head>
+  <body>
+    <header>
+      <div class="grid">
+        <a href="/" class="logo" id="logo_slika">
+          <img src="/slike/logo.png" width="100" alt="porsche_emblem"
+        /></a>
+        <a href="/" class="logo" id="logo_tekst">
+          <img
+            src="/slike/logo_slova.png"
+            width="300"
+            alt="porsche_logo_text"
+          />
+        </a>
+      </div>
+      <nav class="nav" id="racunalo">
+        <a href="/dok">Dokumentacija</a>
+        <a href="/oau">O Autoru</a>
+        <a href="/gal">Galerija</a>
+        <a href="/tab">Primjerci</a>
+        <a href="/obr">Obrazac validacija</a>
+        <a href="/uno">Obrazac izložba</a>
+        <a href="/popis">Cjenik</a>
+        <a href="/owt/izlozba">REST servis</a>
+      </nav>
+    </header>
+    <main>
+      <h1>Unos primjerka</h1>
+      <form method="post" name="obrazac_tablica" action="/owt/izlozba">
+        <div class="stavka_forme">
+          <label for="model">Model</label>
+          <input type="text" id="model" name="model" required />
+        </div>
+        <div class="stavka_forme">
+          <label for="god_proizvodnje">Godina proizvodnje</label>
+          <input
+            type="number"
+            id="god_proizvodnje"
+            name="god_proizvodnje"
+            required
+          />
+        </div>
+        <div class="stavka_forme">
+          <label for="motor">Motor</label>
+          <input type="text" id="motor" name="motor" required />
+        </div>
+        <div class="stavka_forme">
+          <label for="boja">Boja</label>
+          <input type="text" id="boja" name="boja" required />
+        </div>
+        <div class="stavka_forme">
+          <label for="cijena">Cijena (u milijunima eura)</label>
+          <input type="text" id="cijena" name="cijena" required />
+        </div>
+        <div class="stavka_forme"></div>
+        <div class="stavka_forme gumbi">
+          <input class="gumb" type="submit" value="Rezerviraj" />
+          <input class="gumb" type="reset" value="Inicijaliziraj" />
+        </div>
+      </form>
+    </main>
+    <footer>
+      <div class="licence">
+        <a
+          href="https://validator.w3.org/check?uri=https://spider.foi.hr/OWT/2024/zadaca_01/kvlah22/html/obrazac.html"
+          ><img src="/slike/HTML5.png" alt="html5"
+        /></a>
+        <a href="https://creativecommons.org/licenses/by-nc/2.0/deed.en"
+          ><img src="/slike/by-nc.png" alt="cc by nc"
+        /></a>
+      </div>
+      <p class="licence">&copy;2024 Karlo Vlah</p>
+    </footer>
+    <script src="/jsk/kvlah22.js"></script>
+    <script src="/jsk/kvlah22_obrazac.js"></script>
+  </body>
+</html>

@@ -57,6 +57,11 @@ server.get("/obr", (zahtjev, odgovor) => {
   odgovor.sendFile(putanja + "/html/obrazac.html");
 });
 
+// unosPrimjerka
+server.get("/uno", (zahtjev, odgovor) => {
+  odgovor.sendFile(putanja + "/html/unosPrimjerka.html");
+});
+
 // prica
 server.get("/pri", (zahtjev, odgovor) => {
   odgovor.sendFile(putanja + "/html/detalji/prica.html");
@@ -239,7 +244,6 @@ server.delete("/owt/izlozba/:naziv", (zahtjev, odgovor) => {
     if (resurs) {
       greska = parser.brisiIzCSV(resurs);
     }
-    console.log(resurs);
 
     if (greska || !resurs) {
       odgovor.status(417);
