@@ -89,12 +89,7 @@ server.use("/slike", express.static(putanja + "/resursi/slike"));
 
 // 5.zad
 server.get("/popis", (zahtjev, odgovor) => {
-  odgovor.type("html"); //moramo reci koji je tip
-  // let zaglavlje = fs.readFileSync("resursi/zaglavlje.txt", "utf-8");
-  // let podnozje = fs.readFileSync("resursi/podnozje.txt", "utf-8");
-  // odgovor.write(zaglavlje);
-  // odgovor.write("Dinamicna stranica");
-
+  odgovor.type("html");
   // a
   let data = ds.readFileSync("resursi/izlozba.csv", "utf-8", (err, data) => {
     if (err) console.log(err);
