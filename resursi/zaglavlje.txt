@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="hr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Karlo Vlah" />
+    <meta name="keywords" content="muzej, Porsche, vijesti" />
+    <title>Dinamicna stranica</title>
+    <link rel="stylesheet" href="/css/kvlah22.css" />
+    <link rel="stylesheet" href="/css/index.css" />
+  </head>
+  <body>
+    <header>
+      <div class="grid">
+        <a href="/" class="logo" id="logo_slika">
+          <img
+            id="img_slika"
+            src="/slike/logo.png"
+            width="100"
+            alt="porsche_emblem"
+        /></a>
+        <a href="/" class="logo" id="logo_tekst">
+          <img
+            id="img_tekst"
+            src="/slike/logo_slova.png"
+            width="300"
+            alt="porsche_logo_text"
+          />
+        </a>
+      </div>
+      <nav class="nav" id="racunalo">
+        <a href="/dok">Dokumentacija</a>
+        <a href="/oau">O Autoru</a>
+        <a href="/gal">Galerija</a>
+        <a href="/tab">Primjerci</a>
+        <a href="/obr">Obrazac validacija</a>
+        <a href="/uno">Obrazac izložba</a>
+        <a class="trenutni" href="/popis">Cjenik</a>
+        <a href="/owt/izlozba">REST servis</a>
+      </nav>
+    </header>
+    <main>

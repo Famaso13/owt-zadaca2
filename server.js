@@ -92,18 +92,23 @@ server.use("/slike", express.static(putanja + "/resursi/slike"));
 // 5.zad
 server.get("/popis", (zahtjev, odgovor) => {
   odgovor.type("html");
+  let zaglavlje = ds.readFileSync("resursi/zaglavlje.txt", "utf-8");
+  let podnozje = ds.readFileSync("resursi/podnozje.txt", "utf-8");
+  odgovor.write(zaglavlje);
   // a
   let data = ds.readFileSync("resursi/izlozba.csv", "utf-8", (err, data) => {
     if (err) console.log(err);
     else console.log(data);
   });
+  let popuni = "<button id='popuni'>Popuni</button>";
+  odgovor.write(popuni);
   let lista = "";
   let redovi = data.split("\n");
   lista += "<ul>";
   for (var red in redovi) {
     var stupci = redovi[red].split("#");
     if (stupci[0]) {
-      lista += "<li><a href='#'>" + stupci[0] + "</a> - ";
+      lista += `<li><a id='linki' href=''>${stupci[0]}</a> - `;
       for (var stupac in stupci) {
         if (stupac != 0) {
           if (stupac < stupci.length) lista += stupci[stupac] + ", ";
@@ -114,13 +119,19 @@ server.get("/popis", (zahtjev, odgovor) => {
     lista += "</li>";
   }
   lista += "</ul>";
+  odgovor.write(lista);
+  dialog =
+    "<dialog><button autofocus>Close</button><p id='dialog_text'></p></dialog>";
+  odgovor.write(dialog);
+  odgovor.write(podnozje);
+  odgovor.end();
+});
 
-  // c
-  forma = "<form><button id='popuni'>Popuni</button></form>";
-  //skripta = '<script type="text/javascript">const gumb = document.getElementById("popuni"); function puniCSV() {alert("opa")} gumb.addEventListener("click", puniCSV);</script>';
+// c
+server.get("/popis/:naziv", (zahtjev, odgovor) => {
+  odgovor.type("html");
+  naziv = zahtjev.params.naziv;
 
-  stranica = /*skripta +*/ forma + lista;
-  odgovor.write(stranica);
   odgovor.end();
 });
 

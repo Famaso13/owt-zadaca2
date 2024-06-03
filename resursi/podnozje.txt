@@ -1,0 +1,16 @@
+    </main>
+    <footer>
+      <div class="licence">
+        <a
+          href="#"
+          ><img src="/slike/HTML5.png" alt="html5"
+        /></a>
+        <a href="https://creativecommons.org/licenses/by-nc/2.0/deed.en"
+          ><img src="/slike/by-nc.png" alt="cc by nc"
+        /></a>
+      </div>
+      <p class="licence">&copy;2024 Karlo Vlah</p>
+    </footer>
+    <script src="/jsk/kvlah22_dinamicka.js"></script>
+  </body>
+</html>
