@@ -120,9 +120,6 @@ server.get("/popis", (zahtjev, odgovor) => {
   }
   lista += "</ul>";
   odgovor.write(lista);
-  dialog =
-    "<dialog><button autofocus>Close</button><p id='dialog_text'></p></dialog>";
-  odgovor.write(dialog);
   odgovor.write(podnozje);
   odgovor.end();
 });

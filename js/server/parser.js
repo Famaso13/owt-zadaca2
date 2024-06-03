@@ -36,7 +36,6 @@ class Parser {
         ostali += redovi[index] + "\n";
       }
     }
-    console.log("csv " + csv);
     if (ostali)
       ds.writeFile("resursi/izlozba.csv", ostali, { flag: "w" }, (greska) => {
         if (greska) console.error("Greska kod pisanja u csv datoteku.");
