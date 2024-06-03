@@ -72,8 +72,8 @@ a#logo_tekst {
 
 .nav_verzija {
   background-color: black;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: auto auto auto;
   position: static;
   top: 0;
 }
@@ -134,7 +134,7 @@ p[class*="licence"] {
 /* js simulacija */
 
 .img_slika {
-  width: 50%;
+  width: 20%;
 }
 .img_tekst {
   width: 60%;
@@ -159,8 +159,8 @@ p[class*="licence"] {
   }
 
   .nav {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: auto auto auto;
     position: static;
     top: 0;
   }

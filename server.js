@@ -14,6 +14,7 @@ function dajPort(korime) {
 
 const port = dajPort("kvlah22"); //12090
 const express = require("express");
+const cookieParser = require("cookie-parser");
 const server = express();
 const putanja = __dirname;
 
@@ -21,6 +22,7 @@ const ds = require("fs");
 const parserM = require("./js/server/parser.js");
 const parser = new parserM();
 
+server.use(cookieParser());
 server.use(express.urlencoded({ extended: true }));
 server.use(express.json());
 
@@ -248,6 +250,21 @@ server.delete("/owt/izlozba/:naziv", (zahtjev, odgovor) => {
       odgovor.send({ poruka: "Podaci izbrisani" });
     }
   }
+});
+
+// kolacic za index
+server.get("/kolacic/prikaz", (zahtjev, odgovor) => {
+  const stanjeGumba = req.cookies.prikazStanje || "normalan";
+  res.json({ state: stanjeGumba });
+});
+
+server.post("/kolacic/prikaz", (zahtjev, odgovor) => {
+  const { state } = req.body;
+  res.cookie("prikazStanje", state, {
+    maxAge: 7 * 24 * 60 * 60 * 1000,
+    httpOnly: false,
+  });
+  res.json({ success: true });
 });
 
 // 4.zad
